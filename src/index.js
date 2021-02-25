@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './CSS/index.css';
-import App from './App';
+import Kratinys from './Kratinys';
+
+import './css/index.css'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Kratinys />
   </React.StrictMode>,
   document.getElementById('root')
 );

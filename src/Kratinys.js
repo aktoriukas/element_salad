@@ -1,13 +1,21 @@
 import React from 'react'
-import Header from './Elements/Header'
-import Buttons from './Elements/Buttons'
+import Flex from './layout/Flex'
+import Buttons from './layout/Buttons'
 
+import { ThemeProvider } from 'styled-components';
 
 export default function Kratinys() {
+
+    const theme = {
+        main: '#535353',
+        second: '#A0A0A0'
+    }
+
     return (
-        <div>
-            <Header />
-            <Buttons />
-        </div>
+        <ThemeProvider theme={theme}>
+            <Flex>
+                <Buttons />
+            </Flex>
+        </ThemeProvider>
     )
 }

@@ -15,7 +15,7 @@ export default function Buttons() {
     const txt = 'Hover me'
 
     return (
-        <Grid>
+        <Grid size={4}>
             <Zoom txt={txt} />
 
             <Pulse txt={txt} />

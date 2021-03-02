@@ -52,7 +52,7 @@ const Button = styled.button`
         outline: none;
     }
     &:active{
-        bottom: -3px;
+        bottom: -1px;
     }
 `
 

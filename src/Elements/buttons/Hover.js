@@ -5,27 +5,33 @@ const Container = styled.div`
     width: auto;
     height: auto;
     margin: auto;
-    background: ${props => props.theme.main || '#535353'};
     position: relative;
-    box-shadow: 0 0 5px #000000;
-    overflow: hidden;
     color: ${props => props.theme.txtColor || '#ffffff'};;
-    border-radius: 10px;
     &:after{
         content: '';
         position: absolute;
-        width:100%;
-        height: 100%;
-        left: -100%;
-        top: 0;
-        background-color: ${props => props.theme.second || '#A0A0A0'};
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -5px;
+        background-color: ${props => props.theme.main || '#535353'};
         z-index: 1;
-        opacity: 0;
-        transition: left .5s ease, opacity .7s ease;
+        border-radius: 50%;
+        filter: blur(2px);
+        animation: shadow 2s infinite ease-in-out;
     }
-    &:hover:after{
-        opacity: 1;
-        left: 0;
+    @keyframes shadow{
+        0%{
+            width:5%;
+            height: 4px;
+        }
+        50%{
+            width: 90%;
+            height: 2px;
+        }
+        100%{
+            width:5%;
+            height: 4px;
+        }
     }
 `
 const Button = styled.button`
@@ -36,20 +42,30 @@ const Button = styled.button`
     height: 100%;
     padding: .75rem 1rem;
     cursor: pointer;
-    background: transparent;
+    background: ${props => props.theme.main || '#535353'};
+    box-shadow: 0 0 5px #000000;
+    border-radius: 10px;
     z-index: 2;
     border:none;
     font-size: ${props => props.theme.fontSize || '1.4rem'};
     font-family: ${props => props.theme.fontFamily || 'monospace'};
+    bottom: 0;
+    animation: jump 2s infinite ease-in-out;
     &:focus{ 
         outline: none;
     }
     &:active{
         background-color: ${props => props.theme.active || '#ffffff57'};
     }
+    @keyframes jump{
+        0%{bottom: 0}
+        50%{bottom: 10px}
+        100%{bottom: 0}
+    }
 `
 
-export default function Slider(props) {
+
+export default function Hover(props) {
 
     return (
         <Container>

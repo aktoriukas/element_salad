@@ -57,11 +57,11 @@ const Button = styled.button`
 `
 
 
-export default function OffSide() {
+export default function OffSide(props) {
 
     return (
         <Container>
-            <Button>Press me</Button>
+            <Button>{props.txt}</Button>
         </Container>
     )
 }

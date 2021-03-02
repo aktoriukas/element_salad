@@ -4,5 +4,4 @@ export default styled.div`
     display: flex;
     flex-direction: column;
     background-color: #8787ab;
-
 `;

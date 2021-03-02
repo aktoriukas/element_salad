@@ -61,11 +61,11 @@ const Button = styled.button`
 `
 
 
-export default function Expand() {
+export default function Expand(props) {
 
     return (
         <Container>
-            <Button>Press me</Button>
+            <Button>{props.txt}</Button>
         </Container>
     )
 }

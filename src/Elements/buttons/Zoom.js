@@ -52,11 +52,11 @@ const Button = styled.button`
 `
 
 
-export default function Zoom() {
+export default function Zoom(props) {
 
     return (
         <Container>
-            <Button>Press me</Button>
+            <Button>{props.txt}</Button>
         </Container>
     )
 }

@@ -39,7 +39,7 @@ const Button = styled.button`
     left: 0;
     opacity: 0;
     width: 100%;
-    color:  ${props => props.theme.main || '#535353'};;
+    color:  ${props => props.theme.main || '#535353'};
     display: block;
     transition: .5s ease;
     position: absolute;
@@ -59,7 +59,7 @@ const Button = styled.button`
     padding: 0 3rem;
     position: relative;
     background: ${props => props.theme.main || '#535353'};
-    content: 'front';
+    content: 'Hover me';
     transform: translateY(0) rotateX(0);
   }
 `

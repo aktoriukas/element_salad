@@ -5,29 +5,36 @@ const Container = styled.div`
     width: fit-content;
     height: fit-content;
     margin: auto;
-    background: ${props => props.theme.main || '#535353'};
+    background: transparent;
     position: relative;
-    box-shadow: 0 0 5px #000000;
     color: #ffff;
-    border-radius: 10px;
     overflow: hidden;
-    &:after{
+    letter-spacing: 1px;
+    &:after,
+    &:before{
         content: '';
         position: absolute;
-        width:100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        border-radius: 10px;
-        background-color: ${props => props.theme.second || '#A0A0A0'};
+        transform: translateX(-50%);
+        left: 50%;
+        width:0;
+        height: 2px;
+        transform: translateX(-50%);
+        background-color: ${props => props.theme.main || '#535353'};
         z-index: 1;
-        opacity: 0;
-        transform: scale(0);
-        transition: transform .5s ease, opacity .7s ease;
+        transition: all .5s ease-in-out;
     }
-    &:hover:after{
-        transform: scale(1); 
-        opacity: 1;
+    &:after{
+        top: 0;
+    }
+    &:before{
+        bottom: 0;
+    }
+    &:hover{
+        letter-spacing: 10px;
+        &::after,
+        &:before{
+            width: 100%;
+        }
     }
 `
 const Button = styled.button`
@@ -42,17 +49,19 @@ const Button = styled.button`
     z-index: 2;
     border:none;
     font-size: ${props => props.theme.fontSize || '1.4rem'};
-    font-family: ${props => props.theme.fontFamily || 'monospace'};
+    font-family: 'Open Sans';
+    letter-spacing: inherit;
+    transition: all .75s ease-in-out;
     &:focus{ 
         outline: none;
     }
     &:active{
-        bottom: -3px;
+        letter-spacing: 7px;
     }
 `
 
 
-export default function Zoom() {
+export default function Expand() {
 
     return (
         <Container>

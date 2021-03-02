@@ -8,7 +8,11 @@ export default function Kratinys() {
 
     const theme = {
         main: '#535353',
-        second: '#A0A0A0'
+        second: '#A0A0A0',
+        active: '#ffffff57',
+        txtColor: '#ffffff',
+        fontSize: '1.4rem',
+        fontFamily: 'monospace'
     }
 
     return (

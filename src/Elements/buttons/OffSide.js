@@ -5,29 +5,36 @@ const Container = styled.div`
     width: auto;
     height: auto;
     margin: auto;
-    background: ${props => props.theme.main || '#535353'};
+    background: none;
     position: relative;
-    box-shadow: 0 0 5px #000000;
-    overflow: hidden;
+    box-shadow: 0 0 2px #000000;
     color: ${props => props.theme.txtColor || '#ffffff'};;
-    border-radius: 10px;
+    transition: all .7s ease;
+    z-index: 2;
     &:after{
         content: '';
         position: absolute;
         width:100%;
         height: 100%;
-        left: -100%;
-        top: 0;
+        left: 10%;
+        top: 10%;
         background-color: ${props => props.theme.second || '#A0A0A0'};
-        z-index: 1;
-        opacity: 0;
-        transition: left .5s ease, opacity .7s ease;
+        z-index: -1;
+        transition: 
+            left .5s ease, 
+            opacity .7s ease, 
+            top .5s ease;
     }
-    &:hover:after{
-        opacity: 1;
+    &:hover{
+        box-shadow: 0 0 4px #000000;
+        &:after{
+        opacity: .4;
         left: 0;
+        top:0;
+        }
     }
 `
+
 const Button = styled.button`
 
     position: relative;
@@ -39,17 +46,18 @@ const Button = styled.button`
     background: transparent;
     z-index: 2;
     border:none;
-    font-size: ${props => props.theme.fontSize || '1.4rem'};
     font-family: ${props => props.theme.fontFamily || 'monospace'};
+    font-size: ${props => props.theme.fontSize || '1.4rem'};
     &:focus{ 
         outline: none;
     }
     &:active{
-        background-color: ${props => props.theme.active || '#ffffff57'};
+        bottom: -3px;
     }
 `
 
-export default function Slider() {
+
+export default function OffSide() {
 
     return (
         <Container>

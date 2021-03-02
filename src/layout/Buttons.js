@@ -1,26 +1,29 @@
 import React from 'react'
 
 import Grid from './Grid'
-import Description from '../Elements/Description'
 
 import Zoom from '../Elements/buttons/Zoom'
 import Slider from '../Elements/buttons/Slider'
-
-import Button from '../Elements/buttons/Button'
+import OffSide from '../Elements/buttons/OffSide'
+import Flip from '../Elements/buttons/Flip'
+import Pulse from '../Elements/buttons/Pulse'
+import Expand from '../Elements/buttons/Expand'
 
 export default function Buttons() {
 
     return (
         <Grid>
-            <Zoom>
-                <Button>Press me</Button>
-            </Zoom>
-            {/* <Description txt={Zoom} /> */}
+            <Zoom />
 
-            <Slider>
-                <Button>Press me</Button>
-            </Slider>
-            {/* <Description txt={Slider} /> */}
+            <Pulse />
+
+            <Slider />
+
+            <OffSide />
+
+            <Expand />
+
+            <Flip />
         </Grid>
     )
 }

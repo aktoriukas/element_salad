@@ -1,6 +1,7 @@
 import Grid from './Grid'
 
-import SqrNumber from '../Elements/lists/SqrNumber'
+import SqrNr from '../Elements/lists/SqrNr'
+import Cards from '../Elements/lists/Cards'
 
 export default function Lists() {
 
@@ -15,8 +16,14 @@ export default function Lists() {
         ]
 
     return (
-        <Grid size={2}>
-            <SqrNumber list={list} />
-        </Grid>
+        <>
+            <Grid size={2}>
+                <SqrNr list={list} />
+            </Grid>
+
+            <Grid size={1}>
+                <Cards list={list} />
+            </Grid>
+        </>
     )
 }

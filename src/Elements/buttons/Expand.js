@@ -49,7 +49,7 @@ const Button = styled.button`
     z-index: 2;
     border:none;
     font-size: ${props => props.theme.fontSize || '1.4rem'};
-    font-family: 'Open Sans';
+    font-family: ${props => props.theme.fontFamily2 || 'sans-serif'};
     letter-spacing: inherit;
     transition: all .75s ease-in-out;
     &:focus{ 

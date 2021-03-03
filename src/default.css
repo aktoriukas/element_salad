@@ -3,3 +3,10 @@ body{
     height: 100%;
     margin: 0;
 }
+.HueSlider-module_hue_slider__3-jXT ,
+.SaturationValueSelector-module_saturation_value_selector__3JODT,
+.ReactColorPicker-module_swatch__3kHFV{
+    border-radius: 5px;
+    border: none !important;
+    box-shadow: 0 0 8px #535353;
+}

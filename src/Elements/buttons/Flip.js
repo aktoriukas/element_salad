@@ -10,7 +10,7 @@ const Button = styled.button`
   letter-spacing: 1px;
   display: inline-block;
   text-decoration: none;
-  font-family: 'Open Sans';
+  font-family: ${props => props.theme.fontFamily2 || 'sans-serif'};
   text-transform: uppercase;
   padding:0;
   background-color: transparent;
@@ -67,7 +67,7 @@ const Button = styled.button`
 
 export default function Flip() {
 
-    return (
-        <Button />
-    )
+  return (
+    <Button />
+  )
 } 

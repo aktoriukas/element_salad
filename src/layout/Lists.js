@@ -2,6 +2,8 @@ import Grid from './Grid'
 
 import SqrNr from '../Elements/lists/SqrNr'
 import Cards from '../Elements/lists/Cards'
+import FixGradient from '../Elements/lists/FixGradient'
+import Slider from '../Elements/lists/Slider'
 
 export default function Lists() {
 
@@ -18,11 +20,19 @@ export default function Lists() {
     return (
         <>
             <Grid size={2}>
+
                 <SqrNr list={list} />
+
+                <FixGradient list={list} />
+
+                <Slider list={list} />
+
             </Grid>
 
             <Grid size={1}>
+
                 <Cards list={list} />
+
             </Grid>
         </>
     )

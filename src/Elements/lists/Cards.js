@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import React from 'react';
 
 const ListItem = styled.li.attrs(props => ({
     fontFamily: props.fontFamily,
@@ -34,6 +35,11 @@ const ListItem = styled.li.attrs(props => ({
         background-color: ${props => props.secondColor || props.theme.secondColor || '#A0A0A0'};
         z-index: -1;
         box-shadow: -10px 10px 0 ${props => props.mainColor || props.theme.mainColor || '#535353'};
+        transition: all .5s ease;
+    }
+    &:hover:after{
+        box-shadow: 0 0 0 ${props => props.mainColor || props.theme.mainColor || '#535353'},
+        0 0 40px ${props => props.mainColor || props.theme.mainColor || '#535353'};
     }
 `
 const OrderedList = styled.ol`

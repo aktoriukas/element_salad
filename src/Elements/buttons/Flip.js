@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import React from 'react';
 
 const Button = styled.button.attrs(props => ({
   mainColor: props.mainColor,
@@ -48,7 +49,7 @@ const Button = styled.button.attrs(props => ({
     display: block;
     transition: .5s ease;
     position: absolute;
-    background-color: ${props => props.secondColor || props.secondColor || '#A0A0A0'};
+    background: ${props => props.secondColor || props.theme.secondColor || '#A0A0A0'};
     content: 'back';
     transform: translateY(-50%) rotateX(90deg);
   }
@@ -57,7 +58,7 @@ const Button = styled.button.attrs(props => ({
     top: 0;
     left: 0;
     opacity: 1;
-    color: ${props => props.secondColor || props.theme.secondColor || '#A0A0A0'};;
+    color: ${props => props.secondColor || props.theme.secondColor || '#A0A0A0'};
     display: block;
     line-height: 40px;
     transition:  .5s ease;

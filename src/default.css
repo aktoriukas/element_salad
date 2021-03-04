@@ -9,4 +9,22 @@ body{
     border-radius: 5px;
     border: none !important;
     box-shadow: 0 0 8px #535353;
+    opacity: .3;
+}
+.HueSlider-module_hue_slider__3-jXT:hover ,
+.SaturationValueSelector-module_saturation_value_selector__3JODT:hover,
+.ReactColorPicker-module_swatch__3kHFV:hover{
+    opacity: 1;
+}
+.ReactColorPicker-module_hex_value__10kKY{
+    padding: .5rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #4d4d4d74;
+    color: white;
+    font-size: 1.3rem;
+    width: 50% !important;
+}
+.ReactColorPicker-module_hex_value__10kKY:focus{
+    outline: none;
 }

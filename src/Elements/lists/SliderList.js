@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import React from 'react';
 
 const ListItem = styled.li.attrs(props => ({
     fontFamily: props.fontFamily,
@@ -46,7 +47,7 @@ const ListItem = styled.li.attrs(props => ({
         opacity: 0;
     }
     &:hover{
-        padding-left: 3.5rem;
+        padding-left: 4rem;
         &:before{
             text-shadow: 0 0 1px ${props => props.mainColor || props.theme.mainColor || '#535353'};
             opacity: 1;

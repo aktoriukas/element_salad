@@ -32,6 +32,7 @@ To view components visit : [Kratinys](https://aktoriukas.com/kratinys/)
 		fontFamily2: 'sans-serif',
 		backgroundColor: '#8787ab'
    	 }
+   	 
 	const exaplList =
         [
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -63,9 +64,9 @@ ThemeProvider is not essential, but highly recommended.
 
 Priority is given to props, then followed by theme and default value.
 
-##Props
+## Props
 
-#Button
+# Button
 
 | prop | about |
 |-------|--------|
@@ -78,7 +79,7 @@ Priority is given to props, then followed by theme and default value.
 | txt |  string  |
 
 
-#List
+# List
 
 | prop | about |
 |-------|--------|

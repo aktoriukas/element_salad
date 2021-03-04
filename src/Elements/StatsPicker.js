@@ -20,6 +20,7 @@ const Container = styled.div`
     position: relative;
     &:after{
         content: 'px';
+        color: ${props => props.theme.backgroundColor};
         position: absolute;
         height: 100%;
         width: fit-content;

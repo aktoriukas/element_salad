@@ -9,7 +9,9 @@ import Flip from '../Elements/buttons/Flip'
 import Pulse from '../Elements/buttons/Pulse'
 import Expand from '../Elements/buttons/Expand'
 import Hover from '../Elements/buttons/Hover'
-
+import Virtual from '../Elements/buttons/Virtual'
+import Glow from '../Elements/buttons/Glow'
+import GlowInv from '../Elements/buttons/GlowInv'
 
 export default function Buttons() {
 
@@ -30,6 +32,12 @@ export default function Buttons() {
             <Flip />
 
             <Hover txt={txt} />
+
+            <Virtual txt={txt} />
+
+            <Glow txt={txt} />
+
+            <GlowInv txt={txt} />
         </Grid>
     )
 }

@@ -3,7 +3,7 @@ import Grid from './Grid'
 import SqrNr from '../Elements/lists/SqrNr'
 import Cards from '../Elements/lists/Cards'
 import FixGradient from '../Elements/lists/FixGradient'
-import Slider from '../Elements/lists/Slider'
+import Slider from '../Elements/lists/SliderList'
 
 export default function Lists() {
 

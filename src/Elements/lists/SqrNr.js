@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import React from 'react';
 
 const ListItem = styled.li.attrs(props => ({
     fontFamily: props.fontFamily,
@@ -18,6 +19,7 @@ const ListItem = styled.li.attrs(props => ({
     color: ${props => props.txtColor || props.theme.txtColor || '#ffffff'};
     text-shadow: 0 0 2px ${props => props.mainColor || props.theme.mainColor || '#535353'};
     box-shadow: 0 0 4px ${props => props.mainColor || props.theme.mainColor || '#535353'};
+    border-radius: 1rem;
 
     &:before{
         content: counter(list);

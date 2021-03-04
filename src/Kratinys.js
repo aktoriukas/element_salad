@@ -3,12 +3,11 @@ import Flex from './layout/Flex'
 import Buttons from './layout/Buttons'
 import Lists from './layout/Lists'
 import StatsPicker from './Elements/StatsPicker'
+import About from './Elements/About'
 
 import styled, { ThemeProvider } from 'styled-components';
 
 import React, { useReducer } from 'react';
-
-import { button, list } from 'aktoriukas-react-components'
 
 const H1 = styled.h1`
         width: 100%;
@@ -31,21 +30,20 @@ const H2 = styled.h2`
         top: 0;
         padding:1rem 0 1rem 5%;
         z-index: 100;
-        background-color: #8787ab;
 
     `
 
 export default function Kratinys() {
 
     const theme = {
-        mainColor: '#535353',
-        secondColor: '#A0A0A0',
-        activeColor: '#ffffff57',
-        txtColor: '#ffffff',
+        mainColor: '#7796CB',
+        secondColor: '#555677',
+        activeColor: '#D1D2F9',
+        txtColor: '#F4F6F4',
         fontSize: '1.4rem',
         fontFamily: 'monospace',
         fontFamily2: 'sans-serif',
-        backgroundColor: '#8787ab'
+        backgroundColor: '#7B7BA3'
     }
 
     const ACTIONS = {
@@ -91,6 +89,8 @@ export default function Kratinys() {
 
             <Flex>
                 <H1>Kratinys</H1>
+
+                <About />
 
                 <StatsPicker ACTIONS={ACTIONS} dispatch={dispatch} />
 

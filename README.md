@@ -32,7 +32,7 @@ To view components visit : [Kratinys](https://aktoriukas.com/kratinys/)
 		fontFamily2: 'sans-serif',
 		backgroundColor: '#8787ab'
    	 }
-   	     const exaplList =
+	const exaplList =
         [
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             'Aenean tincidunt elit at ipsum cursus, vitae interdum nulla suscipit.',
@@ -43,8 +43,8 @@ To view components visit : [Kratinys](https://aktoriukas.com/kratinys/)
         ]
 
    	 
-   	 const { Zoom } = button;
-   	 const { Cards } = list;
+	const { Zoom } = button;
+	const { Cards } = list;
 
   	return (
 		 <ThemeProvider theme={theme}>

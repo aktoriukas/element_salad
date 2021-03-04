@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 
-const ListItem = styled.li`
+const ListItem = styled.li.attrs(props => ({
+    fontFamily: props.fontFamily,
+    fontSize: props.fontSize,
+    txtColor: props.txtColor,
+    mainColor: props.mainColor,
+    secondColor: props.secondColor,
+}))`
 
-    font-family: ${props => props.theme.fontFamily2 || 'sans-serif'};
-    font-size: ${props => props.theme.fontSize || '1.4rem'};
-    color: ${props => props.theme.txtColor || '#ffffff'};
+    font-family: ${props => props.fontFamily || props.theme.fontFamily2 || 'sans-serif'};
+    font-size: ${props => props.fontSize || props.theme.fontSize || '1.4rem'};
+    color: ${props => props.txtColor || props.theme.txtColor || '#ffffff'};
     position: relative;
     padding: 1.25rem;
     z-index: 0;
@@ -13,7 +19,7 @@ const ListItem = styled.li`
     position: relative;
     transition: all .5s ease-in-out;
     padding-left: 1.5rem;
-    text-shadow: 0 0 1px ${props => props.theme.txtColor || '#ffffff'};
+    text-shadow: 0 0 1px ${props => props.txtColor || props.theme.txtColor || '#ffffff'};
 
     &:before{
         content: counter(list);
@@ -23,7 +29,7 @@ const ListItem = styled.li`
         transform: translateY(-50%);
         color: transparent;
         font-size: 250%;
-        text-shadow: 0 0 5px ${props => props.theme.main || '#535353'};
+        text-shadow: 0 0 2px ${props => props.mainColor || props.theme.mainColor || '#535353'};
         transition: all .5s ease-in-out;
         opacity: .3;
     }
@@ -32,7 +38,7 @@ const ListItem = styled.li`
         position: absolute;
         width: 100%;
         height:100%;
-        background-color: ${props => props.theme.second || '#A0A0A0'};
+        background-color: ${props => props.secondColor || props.theme.secondColor || '#A0A0A0'};
         z-index: -1;
         left:0;
         top: 0;
@@ -42,7 +48,7 @@ const ListItem = styled.li`
     &:hover{
         padding-left: 3.5rem;
         &:before{
-            text-shadow: 0 0 1px ${props => props.theme.main || '#535353'};
+            text-shadow: 0 0 1px ${props => props.mainColor || props.theme.mainColor || '#535353'};
             opacity: 1;
         }
         &:after{
@@ -57,12 +63,24 @@ const OrderedList = styled.ol`
 `
 
 
-export default function Cards({ list }) {
+export default function Cards({ list, fontFamily, fontSize, txtColor, mainColor, secondColor }) {
 
     return (
 
         <OrderedList>
-            {list.map(item => (<ListItem key={item}>{item}</ListItem>))}
+
+            {list.map(item => (
+                <ListItem
+                    fontFamily={fontFamily}
+                    fontSize={fontSize}
+                    txtColor={txtColor}
+                    mainColor={mainColor}
+                    secondColor={secondColor}
+                    key={item}>
+                    {item}
+
+                </ListItem>))}
+
         </OrderedList>
     )
 }

@@ -1,15 +1,19 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Container = styled.div.attrs(props => ({
+    mainColor: props.mainColor,
+    txtColor: props.txtColor,
+    secondColor: props.secondColor
+}))`
 
     width: auto;
     height: auto;
     margin: auto;
-    background: ${props => props.theme.main || '#535353'};
+    background: ${props => props.mainColor || props.theme.mainColor || '#535353'};
     position: relative;
     box-shadow: 0 0 5px #000000;
     overflow: hidden;
-    color: ${props => props.theme.txtColor || '#ffffff'};;
+    color: ${props => props.txtColor || props.theme.txtColor || '#ffffff'};;
     border-radius: 10px;
     &:after{
         content: '';
@@ -18,7 +22,7 @@ const Container = styled.div`
         height: 100%;
         left: -100%;
         top: 0;
-        background-color: ${props => props.theme.second || '#A0A0A0'};
+        background-color: ${props => props.secondColor || props.theme.secondColor || '#A0A0A0'};
         z-index: 1;
         opacity: 0;
         transition: left .5s ease, opacity .7s ease;
@@ -28,7 +32,11 @@ const Container = styled.div`
         left: 0;
     }
 `
-const Button = styled.button`
+const Button = styled.button.attrs(props => ({
+    fontSize: props.fontSize,
+    fontFamily: props.fontFamily,
+    activeColor: props.activeColor
+}))`
 
     position: relative;
     color: inherit;
@@ -39,21 +47,32 @@ const Button = styled.button`
     background: transparent;
     z-index: 2;
     border:none;
-    font-size: ${props => props.theme.fontSize || '1.4rem'};
-    font-family: ${props => props.theme.fontFamily || 'monospace'};
+    font-size: ${props => props.fontSize || props.theme.fontSize || '1.4rem'};
+    font-family: ${props => props.fontFamily || props.theme.fontFamily || 'monospace'};
     &:focus{ 
         outline: none;
     }
     &:active{
-        background-color: ${props => props.theme.active || '#ffffff57'};
+        background-color: ${props => props.activeColor || props.theme.activeColor || '#ffffff57'};
     }
 `
 
-export default function Slider(props) {
+export default function Slider({ txt, activeColor, fontFamily, fontSize, secondColor, mainColor, txtColor }) {
 
     return (
-        <Container>
-            <Button>{props.txt}</Button>
+        <Container
+            txtColor={txtColor}
+            secondColor={secondColor}
+            mainColor={mainColor}>
+
+            <Button
+                fontSize={fontSize}
+                fontFamily={fontFamily}
+                activeColor={activeColor}>
+                {txt}
+
+            </Button>
+
         </Container>
     )
 }

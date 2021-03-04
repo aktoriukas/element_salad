@@ -1,17 +1,21 @@
 import styled from 'styled-components';
 
 
-const ListItem = styled.li`
+const ListItem = styled.li.attrs(props => ({
+    fontFamily: props.fontFamily,
+    fontSize: props.fontSize,
+    txtColor: props.txtColor,
+}))`
 
     padding: 1rem;
     width: auto;
-    font-family: ${props => props.theme.fontFamily2 || 'sans-serif'};
-    font-size: ${props => props.theme.fontSize || '1.4rem'};
-    color: ${props => props.theme.txtColor || '#ffffff'};
+    font-family: ${props => props.fontFamily || props.theme.fontFamily2 || 'sans-serif'};
+    font-size: ${props => props.fontSize || props.theme.fontSize || '1.4rem'};
+    color: ${props => props.txtColor || props.theme.txtColor || '#ffffff'};
     counter-increment: list;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid ${props => props.theme.txtColor || '#ffffff'};
+    border-bottom: 1px solid ${props => props.txtColor || props.theme.txtColor || '#ffffff'};
 
     &:before{
         content: counter(list);
@@ -35,13 +39,23 @@ const OrderedList = styled.ol`
     width: 100%;
 `
 
-export default function SqrNumber({ list }) {
+export default function SqrNumber({ list, fontFamily, fontSize, txtColor }) {
 
     return (
 
         <OrderedList>
+
             {list.map(item => (
-                <ListItem key={item}>{item}</ListItem>
+
+                <ListItem
+                    fontFamily={fontFamily}
+                    fontSize={fontSize}
+                    txtColor={txtColor}
+                    key={item}>
+
+                    {item}
+
+                </ListItem>
             ))}
         </OrderedList>
     )

@@ -1,19 +1,22 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Container = styled.div.attrs(props => ({
+    txtColor: props.txtColor,
+    mainColor: props.mainColor,
+}))`
 
     width: auto;
     height: auto;
     margin: auto;
     position: relative;
-    color: ${props => props.theme.txtColor || '#ffffff'};;
+    color: ${props => props.txtColor || props.theme.txtColor || '#ffffff'};;
     &:after{
         content: '';
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         bottom: -5px;
-        background-color: ${props => props.theme.main || '#535353'};
+        background-color: ${props => props.mainColor || props.theme.mainColor || '#535353'};
         z-index: 1;
         border-radius: 50%;
         filter: blur(2px);
@@ -34,7 +37,12 @@ const Container = styled.div`
         }
     }
 `
-const Button = styled.button`
+const Button = styled.button.attrs(props => ({
+    mainColor: props.mainColor,
+    fontSize: props.fontSize,
+    fontFamily: props.fontFamily,
+    activeColor: props.activeColor
+}))`
 
     position: relative;
     color: inherit;
@@ -42,20 +50,20 @@ const Button = styled.button`
     height: 100%;
     padding: .75rem 1rem;
     cursor: pointer;
-    background: ${props => props.theme.main || '#535353'};
+    background: ${props => props.mainColor || props.theme.mainColor || '#535353'};
     box-shadow: 0 0 5px #000000;
     border-radius: 10px;
     z-index: 2;
     border:none;
-    font-size: ${props => props.theme.fontSize || '1.4rem'};
-    font-family: ${props => props.theme.fontFamily || 'monospace'};
+    font-size: ${props => props.fontSize || props.theme.fontSize || '1.4rem'};
+    font-family: ${props => props.fontFamily || props.theme.fontFamily || 'monospace'};
     bottom: 0;
     animation: jump 2s infinite ease-in-out;
     &:focus{ 
         outline: none;
     }
     &:active{
-        background-color: ${props => props.theme.active || '#ffffff57'};
+        background-color: ${props => props.activeColor || props.theme.activeColor || '#ffffff57'};
     }
     @keyframes jump{
         0%{bottom: 0}
@@ -65,11 +73,21 @@ const Button = styled.button`
 `
 
 
-export default function Hover(props) {
+export default function Hover({ txt, activeColor, fontFamily, fontSize, mainColor, txtColor }) {
 
     return (
-        <Container>
-            <Button>{props.txt}</Button>
+        <Container
+            txtColor={txtColor}
+            mainColor={mainColor}>
+
+            <Button
+                mainColor={mainColor}
+                fontFamily={fontFamily}
+                fontSize={fontSize}
+                activeColor={activeColor}>
+                {txt}
+            </Button>
+
         </Container>
     )
 }

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Container = styled.div.attrs(props => ({
+    secondColor: props.secondColor
+}))`
 
     width: fit-content;
     height: fit-content;
@@ -14,7 +16,7 @@ const Container = styled.div`
         height: 100%;
         left: 0;
         top: 0;
-        background-color: ${props => props.theme.second || '#A0A0A0'};
+        background-color: ${props => props.secondColor || props.theme.secondColor || '#A0A0A0'};
         z-index: 0;
         transform: scale(0);
     }
@@ -38,11 +40,16 @@ const Container = styled.div`
         }
 }
 `
-const Button = styled.button`
+const Button = styled.button.attrs(props => ({
+    txtColor: props.txtColor,
+    mainColor: props.mainColor,
+    fontSize: props.fontSize,
+    fontFamily: props.fontFamily
+}))`
 
     position: relative;
-    color: ${props => props.theme.txtColor || '#ffffff'};
-    background: ${props => props.theme.main || '#535353'};
+    color: ${props => props.txtColor || props.theme.txtColor || '#ffffff'};
+    background: ${props => props.mainColor || props.theme.mainColor || '#535353'};
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -51,18 +58,27 @@ const Button = styled.button`
     z-index: 20;
     box-shadow: 0 0 5px #000000;
     border:none;
-    font-size: ${props => props.theme.fontSize || '1.4rem'};
-    font-family: ${props => props.theme.fontFamily || 'monospace'};
+    font-size: ${props => props.fontSize || props.theme.fontSize || '1.4rem'};
+    font-family: ${props => props.fontFamily || props.theme.fontFamily || 'monospace'};
     &:focus{ outline: none;}
     &:active{bottom: -1px;}
 `
 
 
-export default function Pulse(props) {
+export default function Pulse({ txt, fontFamily, fontSize, txtColor, mainColor, secondColor }) {
 
     return (
-        <Container>
-            <Button>{props.txt}</Button>
+        <Container
+            secondColor={secondColor}>
+
+            <Button
+                fontFamily={fontFamily}
+                fontSize={fontSize}
+                txtColor={txtColor}
+                mainColor={mainColor}>
+                {txt}
+            </Button>
+
         </Container>
     )
 }

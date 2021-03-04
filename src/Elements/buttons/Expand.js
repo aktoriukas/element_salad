@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Container = styled.div.attrs(props => ({
+    mainColor: props.mainColor
+}))`
 
     width: fit-content;
     height: fit-content;
@@ -19,7 +21,7 @@ const Container = styled.div`
         width:0;
         height: 2px;
         transform: translateX(-50%);
-        background-color: ${props => props.theme.main || '#535353'};
+        background-color: ${props => props.mainColor || props.theme.mainColor || '#535353'};
         z-index: 1;
         transition: all .5s ease-in-out;
     }
@@ -37,10 +39,14 @@ const Container = styled.div`
         }
     }
 `
-const Button = styled.button`
+const Button = styled.button.attrs(props => ({
+    txtColor: props.txtColor,
+    fontSize: props.fontSize,
+    fontFamily: props.fontFamily
+}))`
 
     position: relative;
-    color: ${props => props.theme.txtColor || '#ffffff'};;
+    color: ${props => props.txtColor || props.theme.txtColor || '#ffffff'};;
     width: 100%;
     height: 100%;
     padding: .75rem 1rem;
@@ -48,8 +54,8 @@ const Button = styled.button`
     background: transparent;
     z-index: 2;
     border:none;
-    font-size: ${props => props.theme.fontSize || '1.4rem'};
-    font-family: ${props => props.theme.fontFamily2 || 'sans-serif'};
+    font-size: ${props => props.fontSize || props.theme.fontSize || '1.4rem'};
+    font-family: ${props => props.fontFamily || props.theme.fontFamily2 || 'sans-serif'};
     letter-spacing: inherit;
     transition: all .75s ease-in-out;
     &:focus{ 
@@ -61,11 +67,16 @@ const Button = styled.button`
 `
 
 
-export default function Expand(props) {
+export default function Expand({ txt, fontFamily, fontSize, txtColor, mainColor }) {
 
     return (
-        <Container>
-            <Button>{props.txt}</Button>
+        <Container mainColor={mainColor}>
+            <Button
+                fontFamily={fontFamily}
+                fontSize={fontSize}
+                txtColor={txtColor}>
+                {txt}
+            </Button>
         </Container>
     )
 }

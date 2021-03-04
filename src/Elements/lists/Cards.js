@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 
-const ListItem = styled.li`
+const ListItem = styled.li.attrs(props => ({
+    fontFamily: props.fontFamily,
+    fontSize: props.fontSize,
+    txtColor: props.txtColor,
+    mainColor: props.mainColor,
+    secondColor: props.secondColor,
+}))`
 
-    font-family: ${props => props.theme.fontFamily2 || 'sans-serif'};
-    font-size: ${props => props.theme.fontSize || '1.4rem'};
-    color: ${props => props.theme.txtColor || '#ffffff'};
+    font-family: ${props => props.fontFamily || props.theme.fontFamily2 || 'sans-serif'};
+    font-size: ${props => props.fontSize || props.theme.fontSize || '1.4rem'};
+    color: ${props => props.txtColor || props.theme.txtColor || '#ffffff'};
     padding: 2rem .5rem .5rem 1rem;
     position: relative;
     z-index: 0;
@@ -16,7 +22,7 @@ const ListItem = styled.li`
         font-size: 500%;
         line-height: 0.3;
         float: right;
-        text-shadow: 0 0 2px ${props => props.theme.main || '#535353'};
+        text-shadow: 0 0 2px ${props => props.mainColor || props.theme.mainColor || '#535353'};
     }
     &:after{
         content: '';
@@ -25,9 +31,9 @@ const ListItem = styled.li`
         height: 100%;
         top: 3%;
         right: 0%;
-        background-color: ${props => props.theme.second || '#A0A0A0'};
+        background-color: ${props => props.secondColor || props.theme.secondColor || '#A0A0A0'};
         z-index: -1;
-        box-shadow: -10px 10px 0 ${props => props.theme.main || '#535353'};
+        box-shadow: -10px 10px 0 ${props => props.mainColor || props.theme.mainColor || '#535353'};
     }
 `
 const OrderedList = styled.ol`
@@ -49,12 +55,26 @@ const OrderedList = styled.ol`
     }
 `
 
-export default function Cards({ list }) {
+export default function Cards({ list, fontFamily, fontSize, txtColor, mainColor, secondColor }) {
 
     return (
 
         <OrderedList>
-            {list.map(item => (<ListItem key={item}>{item}</ListItem>))}
+
+            {list.map(item => (
+
+                <ListItem
+                    fontFamily={fontFamily}
+                    fontSize={fontSize}
+                    txtColor={txtColor}
+                    mainColor={mainColor}
+                    secondColor={secondColor}
+                    key={item}>
+
+                    {item}
+
+                </ListItem>))}
+
         </OrderedList>
     )
 }

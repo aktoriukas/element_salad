@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-const Button = styled.button`
+const Button = styled.button.attrs(props => ({
+  mainColor: props.mainColor,
+  secondColor: props.secondColor,
+  fontSize: props.fontSize,
+  fontFamily: props.fontFamily,
+}))`
 
   opacity: 1;
   outline: 0;
@@ -10,7 +15,7 @@ const Button = styled.button`
   letter-spacing: 1px;
   display: inline-block;
   text-decoration: none;
-  font-family: ${props => props.theme.fontFamily2 || 'sans-serif'};
+  font-family: ${props => props.fontFamily || props.theme.fontFamily2 || 'sans-serif'};
   text-transform: uppercase;
   padding:0;
   background-color: transparent;
@@ -18,7 +23,7 @@ const Button = styled.button`
   width: fit-content;
   height: fit-content;
   margin: auto;
-  font-size: ${props => props.theme.fontSize || '1.4rem'};
+  font-size: ${props => props.fontSize || props.theme.fontSize || '1.4rem'};
   cursor: pointer;
   
   &:hover{
@@ -39,11 +44,11 @@ const Button = styled.button`
     left: 0;
     opacity: 0;
     width: 100%;
-    color:  ${props => props.theme.main || '#535353'};
+    color:  ${props => props.mainColor || props.theme.mainColor || '#535353'};
     display: block;
     transition: .5s ease;
     position: absolute;
-    background-color: ${props => props.theme.second || '#A0A0A0'};
+    background-color: ${props => props.secondColor || props.secondColor || '#A0A0A0'};
     content: 'back';
     transform: translateY(-50%) rotateX(90deg);
   }
@@ -52,22 +57,27 @@ const Button = styled.button`
     top: 0;
     left: 0;
     opacity: 1;
-    color: ${props => props.theme.second || '#A0A0A0'};;
+    color: ${props => props.secondColor || props.theme.secondColor || '#A0A0A0'};;
     display: block;
     line-height: 40px;
     transition:  .5s ease;
     padding: 0 3rem;
     position: relative;
-    background: ${props => props.theme.main || '#535353'};
+    background: ${props => props.mainColor || props.theme.mainColor || '#535353'};
     content: 'Hover me';
     transform: translateY(0) rotateX(0);
   }
 `
 
 
-export default function Flip() {
+export default function Flip({ mainColor, secondColor, fontSize, fontFamily }) {
 
   return (
-    <Button />
+
+    <Button
+      mainColor={mainColor}
+      secondColor={secondColor}
+      fontSize={fontSize}
+      fontFamily={fontFamily} />
   )
 } 

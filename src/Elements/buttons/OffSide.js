@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Container = styled.div.attrs(props => ({
+    txtColor: props.txtColor,
+    secondColor: props.secondColor,
+    mainColor: props.mainColor,
+}))`
 
     width: auto;
     height: auto;
     margin: auto;
     background: none;
     position: relative;
-    box-shadow: 0 0 2px #000000;
-    color: ${props => props.theme.txtColor || '#ffffff'};;
+    box-shadow: 0 0 2px ${props => props.mainColor || props.theme.mainColor || '#535353'};;
+    color: ${props => props.txtColor || props.theme.txtColor || '#ffffff'};;
     transition: all .7s ease;
     z-index: 2;
     &:after{
@@ -18,7 +22,7 @@ const Container = styled.div`
         height: 100%;
         left: 10%;
         top: 10%;
-        background-color: ${props => props.theme.second || '#A0A0A0'};
+        background-color: ${props => props.secondColor || props.theme.secondColor || '#A0A0A0'};
         z-index: -1;
         transition: 
             left .5s ease, 
@@ -35,7 +39,10 @@ const Container = styled.div`
     }
 `
 
-const Button = styled.button`
+const Button = styled.button.attrs(props => ({
+    fontFamily: props.fontFamily,
+    fontSize: props.fontSize
+}))`
 
     position: relative;
     color: inherit;
@@ -46,8 +53,8 @@ const Button = styled.button`
     background: transparent;
     z-index: 2;
     border:none;
-    font-family: ${props => props.theme.fontFamily || 'monospace'};
-    font-size: ${props => props.theme.fontSize || '1.4rem'};
+    font-family: ${props => props.fontFamily || props.theme.fontFamily || 'monospace'};
+    font-size: ${props => props.fontSize || props.theme.fontSize || '1.4rem'};
     &:focus{ 
         outline: none;
     }
@@ -57,11 +64,20 @@ const Button = styled.button`
 `
 
 
-export default function OffSide(props) {
+export default function OffSide({ txt, fontFamily, fontSize, secondColor, txtColor, mainColor }) {
 
     return (
-        <Container>
-            <Button>{props.txt}</Button>
+        <Container
+            mainColor={mainColor}
+            secondColor={secondColor}
+            txtColor={txtColor}>
+
+            <Button
+                fontFamily={fontFamily}
+                fontSize={fontSize}>
+                {txt}
+            </Button>
+
         </Container>
     )
 }

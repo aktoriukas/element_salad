@@ -8,6 +8,7 @@ import styled, { ThemeProvider } from 'styled-components';
 
 import React, { useReducer } from 'react';
 
+
 const H1 = styled.h1`
         width: 100%;
         padding-left: 5%;
@@ -36,9 +37,9 @@ const H2 = styled.h2`
 export default function Kratinys() {
 
     const theme = {
-        main: '#535353',
-        second: '#A0A0A0',
-        active: '#ffffff57',
+        mainColor: '#535353',
+        secondColor: '#A0A0A0',
+        activeColor: '#ffffff57',
         txtColor: '#ffffff',
         fontSize: '1.4rem',
         fontFamily: 'monospace',
@@ -60,15 +61,15 @@ export default function Kratinys() {
         switch (action.type) {
 
             case ACTIONS.MAIN_COLOR:
-                state.main = action.payload.color
+                state.mainColor = action.payload.color
                 return { ...state }
 
             case ACTIONS.SECOND_COLOR:
-                state.second = action.payload.color
+                state.secondColor = action.payload.color
                 return { ...state }
 
             case ACTIONS.ACTIVE_COLOR:
-                state.active = action.payload.color
+                state.activeColor = action.payload.color
                 return { ...state }
 
             case ACTIONS.TXT_COLOR:
@@ -84,9 +85,9 @@ export default function Kratinys() {
         }
     }
 
-
     return (
         <ThemeProvider theme={state}>
+
             <Flex>
                 <H1>Kratinys</H1>
 

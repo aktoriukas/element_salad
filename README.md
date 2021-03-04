@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+#Element_sald
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Collection of React components.
+Elements are build using 'styled-components' . It comes with styling and functionality can be passed very easily.
+To Have complete access and modification possibilities, download this repo and use each element separately.
 
-## Available Scripts
+all elements are in: 
 
-In the project directory, you can run:
+### 'src/Elements'
 
-### `npm start`
+To view components visit : [Kratinys](https://aktoriukas.com/kratinys/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## To install using NPM
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 'npm i aktoriukas-react-components '
 
-### `npm test`
+ Here's an example of basic usage: 
+ 
+ ``js
+import styled, { ThemeProvider } from 'styled-components';
+import { button, list } from 'aktoriukas-react-components'
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+export default function MyApp() {
 
-### `npm run build`
+	const theme = {
+		mainColor: '#535353',
+		secondColor: '#A0A0A0',
+		activeColor: '#ffffff57',
+		txtColor: '#ffffff',
+		fontSize: '1.4rem',
+		fontFamily: 'monospace',
+		fontFamily2: 'sans-serif',
+		backgroundColor: '#8787ab'
+   	 }
+   	     const exaplList =
+        [
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'Aenean tincidunt elit at ipsum cursus, vitae interdum nulla suscipit.',
+            'Curabitur in orci vel risus facilisis accumsan.',
+            'Morbi eleifend tortor lacinia sapien sagittis, quis pellentesque felis egestas.',
+            'Aenean viverra dui quis leo lacinia fringilla.',
+            'Sed varius lectus ac condimentum egestas.'
+        ]
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   	 
+   	 const { Zoom } = button;
+   	 const { Cards } = list;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  	return (
+		 <ThemeProvider theme={theme}>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+			<Zoom txt='Hover me' />
+			
+			<Cards list={exapleList} />
+		  
+		</ThemeProvider>
 
-### `npm run eject`
+  	);
+}
+``
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ThemeProvider is not essential, but highly recommended.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Priority is given to props, then followed by theme and default value.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+##Props
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#Button
 
-## Learn More
+| prop | about |
+|-------|--------|
+| fontFamily | font family name |
+| fontSize |  in px  |
+| mainColor |  any tipe of color  |
+| secondColor | any tipe of color    |
+| txtColor | any tipe of color    |
+| activeColor | any tipe of color    |
+| txt |  string  |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#List
 
-### Code Splitting
+| prop | about |
+|-------|--------|
+| fontFamily | font family name |
+| fontSize |  in px  |
+| mainColor |  any tipe of color  |
+| secondColor | any tipe of color    |
+| txtColor | any tipe of color    |
+| activeColor | any tipe of color    |
+| list |  array  |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

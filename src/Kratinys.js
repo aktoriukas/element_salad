@@ -8,6 +8,7 @@ import styled, { ThemeProvider } from 'styled-components';
 
 import React, { useReducer } from 'react';
 
+import { button, list } from 'aktoriukas-react-components'
 
 const H1 = styled.h1`
         width: 100%;

@@ -16,7 +16,7 @@ To view components visit : [Kratinys](https://aktoriukas.com/kratinys/)
 
  Here's an example of basic usage: 
  
- ``js
+ ```js
 	import styled, { ThemeProvider } from 'styled-components';
 	import { button, list } from 'aktoriukas-react-components'
 
@@ -57,7 +57,7 @@ To view components visit : [Kratinys](https://aktoriukas.com/kratinys/)
 
   	);
 }
-``
+```
 
 ThemeProvider is not essential, but highly recommended.
 

@@ -1,4 +1,4 @@
-#Element_sald
+# Element_sald
 
 Collection of React components.
 Elements are build using 'styled-components' . It comes with styling and functionality can be passed very easily.
@@ -6,13 +6,13 @@ To Have complete access and modification possibilities, download this repo and u
 
 all elements are in: 
 
-### 'src/Elements'
+### `src/Elements`
 
 To view components visit : [Kratinys](https://aktoriukas.com/kratinys/)
 
 ## To install using NPM
 
-### 'npm i aktoriukas-react-components '
+### `npm i aktoriukas-react-components `
 
  Here's an example of basic usage: 
  

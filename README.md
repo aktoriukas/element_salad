@@ -17,10 +17,10 @@ To view components visit : [Kratinys](https://aktoriukas.com/kratinys/)
  Here's an example of basic usage: 
  
  ``js
-import styled, { ThemeProvider } from 'styled-components';
-import { button, list } from 'aktoriukas-react-components'
+	import styled, { ThemeProvider } from 'styled-components';
+	import { button, list } from 'aktoriukas-react-components'
 
-export default function MyApp() {
+	export default function MyApp() {
 
 	const theme = {
 		mainColor: '#535353',

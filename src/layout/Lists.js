@@ -4,6 +4,7 @@ import SqrNr from '../Elements/lists/SqrNr'
 import Cards from '../Elements/lists/Cards'
 import FixGradient from '../Elements/lists/FixGradient'
 import Slider from '../Elements/lists/SliderList'
+import CardsClear from '../Elements/lists/CardsClear'
 
 export default function Lists() {
 
@@ -32,6 +33,8 @@ export default function Lists() {
             <Grid size={1}>
 
                 <Cards list={list} />
+
+                <CardsClear list={list} />
 
             </Grid>
         </>

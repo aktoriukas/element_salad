@@ -10,6 +10,8 @@ body{
     border: none !important;
     box-shadow: 0 0 8px #535353;
     opacity: .3;
+    transition: all .2s ease-in-out;
+
 }
 .HueSlider-module_hue_slider__3-jXT:hover ,
 .SaturationValueSelector-module_saturation_value_selector__3JODT:hover,

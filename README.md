@@ -72,10 +72,10 @@ Priority is given to props, then followed by theme and default value.
 |-------|--------|
 | fontFamily | font family name |
 | fontSize |  in px  |
-| mainColor |  any tipe of color  |
-| secondColor | any tipe of color    |
-| txtColor | any tipe of color    |
-| activeColor | any tipe of color    |
+| mainColor |  any type of color  |
+| secondColor | any type of color    |
+| txtColor | any type of color    |
+| activeColor | any type of color    |
 | txt |  string  |
 
 
@@ -85,11 +85,12 @@ Priority is given to props, then followed by theme and default value.
 |-------|--------|
 | fontFamily | font family name |
 | fontSize |  in px  |
-| mainColor |  any tipe of color  |
-| secondColor | any tipe of color    |
-| txtColor | any tipe of color    |
-| activeColor | any tipe of color    |
+| mainColor |  any type of color  |
+| secondColor | any type of color    |
+| txtColor | any type of color    |
+| activeColor | any type of color    |
 | list |  array  |
+| img |  link to img  |
 
 
 

@@ -57,7 +57,6 @@ const Button = styled.button.attrs(props => ({
         background-color: ${props => props.activeColor || props.theme.activeColor || '#ffffff57'};
     }
 `
-
 export default function Slider({ txt, activeColor, fontFamily, fontSize, secondColor, mainColor, txtColor }) {
 
     return (

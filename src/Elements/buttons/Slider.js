@@ -70,9 +70,7 @@ export default function Slider({ txt, activeColor, fontFamily, fontSize, secondC
                 fontFamily={fontFamily}
                 activeColor={activeColor}>
                 {txt}
-
             </Button>
-
         </Container>
     )
 }

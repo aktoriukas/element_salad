@@ -5,6 +5,7 @@ import Cards from '../Elements/lists/Cards'
 import FixGradient from '../Elements/lists/FixGradient'
 import Slider from '../Elements/lists/SliderList'
 import CardsClear from '../Elements/lists/CardsClear'
+import AnimatedHover from '../Elements/lists/AnimatedHover'
 
 export default function Lists() {
 
@@ -27,6 +28,8 @@ export default function Lists() {
                 <FixGradient list={list} />
 
                 <Slider list={list} />
+
+                {/* <AnimatedHover list={list} /> */}
 
             </Grid>
 

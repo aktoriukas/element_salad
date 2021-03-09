@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
+import Img from '../../img/pyramid.jpg'
 
 const ListItem = styled.li.attrs(props => ({
     fontFamily: props.fontFamily,
@@ -28,7 +29,7 @@ const ListItem = styled.li.attrs(props => ({
         left: .5rem;
         font-size: 450%;
         transition: all .5s ease-in-out;
-        background-image: url(${props => props.img || 'http://www.justinmaller.com/img/projects/wallpaper/WP_Echoes-2560x1440_00065.jpg'}); // <--- CHANGE THIS
+        background-image: url(${props => props.img || Img}); // <--- CHANGE THIS
         background-attachment: fixed;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -53,7 +54,7 @@ const OrderedList = styled.ol`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    background-image: url(${props => props.img || 'http://www.justinmaller.com/img/projects/wallpaper/WP_Echoes-2560x1440_00065.jpg'}); // <--- CHANGE THIS
+    background-image: url(${props => props.img || Img}); // <--- CHANGE THIS
     background-attachment: fixed;
     background-size: cover;
     background-repeat: none;
